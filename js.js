@@ -1,10 +1,25 @@
-var tableau = ['chattts','tabl', 'radiateure', 'carton'];
+var tableau = ['chiotte','SaddamUssein', 'JeanLouis', 'bordel', 'michelle', 'godsabre', 'javascript', 'pomplar', 'fumier'];
 var lettre = document.getElementById('input');
 var bouton = document.getElementById('bouton');
 var savelettre = savelettre = 0;
-
+var defaite = document.getElementById('defaite2');
+var motus = document.getElementById('mot');
+var echec = 5;
+console.log(echec)
 var rand = tableau[Math.floor(Math.random()*tableau.length)];
 console.log(rand);
+
+var a1 = document.getElementById('a1');
+var a2 = document.getElementById('a2');
+var a3 = document.getElementById('a3');
+var a4 = document.getElementById('a4');
+
+a1.style.display = 'none';
+a2.style.display = 'none';
+a3.style.display = 'none';
+a4.style.display = 'none';
+
+
 
 
 bouton.addEventListener("click", function () {
@@ -14,7 +29,9 @@ var spanGet = document.getElementsByTagName('span');
     var trouve = false;
 
     for (let i = 0; i < rand.length; i++) {
-        var echec = 10;
+
+
+
         if (rand[i] === lettreEnter) {
             alert('Lettre trouvée');
             trouve = true;
@@ -24,7 +41,7 @@ var spanGet = document.getElementsByTagName('span');
             console.log(i);
             savelettre = savelettre + 1
         }
-
+        defaite.innerHTML = 'Tentative Restante ' + echec;
         if (savelettre === rand.length)
         {
             for (let i = 0; i < rand.length; i++){
@@ -38,27 +55,51 @@ var spanGet = document.getElementsByTagName('span');
 
     function victoire() {
         rand = tableau[Math.floor(Math.random()*tableau.length)];
-        var savelettre = savelettre = 0;
-        var echec = 6;
+        savelettre = savelettre = 0;
+        echec = 5;
         return tableau;
     }
 
     if (trouve === false){
         alert('Lettre non trouvée');
-        var echec = echec-1;
-        console.log(echec)
+        echec = echec-1;
+        console.log(echec);
+        defaite.innerHTML = 'Tentative Restante ' + echec;
     }
 
 if (echec === 0){
     alert('perdu');
     victoire();
     spannage();
-    console.log(rand)
+    a1.style.display = 'none';
+    a2.style.display = 'none';
+    a3.style.display = 'none';
+    a4.style.display = 'none';
+}
+
+if (echec === 4){
+    a1.style.display = 'block';
+}
+
+else if (echec === 3){
+    a1.style.display = 'none';
+    a2.style.display = 'block';
+}
+
+else if (echec === 2){
+    a1.style.display = 'none';
+    a2.style.display = 'none';
+    a3.style.display = 'block';
+}
+
+else if (echec === 1){
+    a1.style.display = 'none';
+    a2.style.display = 'none';
+    a3.style.display = 'none';
+    a4.style.display = 'block';
 }
 
 });
-
-
 
 
 

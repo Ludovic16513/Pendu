@@ -4,3 +4,44 @@ span{
     margin-right: 10px;
     border-bottom: 1px solid black;
 }
+
+
+#containeralea {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+
+}
+
+#container2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+#container3 {
+    display: flex;
+}
+
+#contexte{
+    display: grid;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+body{
+    font-size: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    color: yellow;
+    font-weight: bold;
+    background: url("hallo.jpg");
+}
